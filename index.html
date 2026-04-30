@@ -1,0 +1,444 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NURDRIP | Premium Streetwear</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Inter,sans-serif;
+background:#0a0a0a;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
+}
+
+.logo{
+font-family:Oswald;
+font-size:30px;
+letter-spacing:4px;
+font-weight:700;
+color:#fff;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav ul li a{
+text-decoration:none;
+color:#fff;
+font-size:14px;
+letter-spacing:2px;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#ff5500;
+}
+
+.cart{
+position:relative;
+cursor:pointer;
+font-size:20px;
+}
+
+#cartCount{
+position:absolute;
+top:-8px;
+right:-10px;
+background:#ff5500;
+width:20px;
+height:20px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:11px;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+background:url('images/hero.jpg') center/cover;
+display:flex;
+align-items:center;
+padding:0 8%;
+position:relative;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.45);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:650px;
+}
+
+.hero h1{
+font-family:Oswald;
+font-size:95px;
+line-height:0.95;
+letter-spacing:3px;
+}
+
+.hero span{
+color:#ff5500;
+}
+
+.hero p{
+margin-top:20px;
+font-size:18px;
+color:#ddd;
+max-width:500px;
+line-height:1.6;
+}
+
+.hero button{
+margin-top:30px;
+padding:15px 35px;
+border:none;
+background:#ff5500;
+color:#fff;
+font-weight:700;
+cursor:pointer;
+font-size:15px;
+letter-spacing:2px;
+transition:0.3s;
+}
+
+.hero button:hover{
+transform:translateY(-3px);
+}
+
+/* COUNTDOWN */
+.countdown{
+display:flex;
+gap:20px;
+margin-top:30px;
+}
+
+.countdown div{
+background:#111;
+padding:15px;
+min-width:80px;
+text-align:center;
+border:1px solid #222;
+}
+
+.countdown h3{
+font-size:28px;
+color:#ff5500;
+}
+
+.countdown p{
+font-size:12px;
+margin-top:5px;
+}
+
+/* PRODUCTS */
+.section{
+padding:90px 7%;
+}
+
+.section-title{
+font-family:Oswald;
+font-size:50px;
+margin-bottom:40px;
+letter-spacing:2px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:#111;
+border:1px solid #1d1d1d;
+overflow:hidden;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card h3{
+font-size:22px;
+margin-bottom:8px;
+}
+
+.price{
+color:#ff5500;
+font-size:20px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.card button{
+width:100%;
+padding:13px;
+border:none;
+background:#ff5500;
+color:#fff;
+font-weight:700;
+cursor:pointer;
+}
+
+/* WHATSAPP FLOAT */
+.checkout{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+padding:15px 24px;
+border-radius:50px;
+font-weight:700;
+cursor:pointer;
+z-index:999;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+/* NOTIFICATION */
+.toast{
+position:fixed;
+top:25px;
+right:25px;
+background:#111;
+padding:15px 20px;
+border-left:4px solid #ff5500;
+display:none;
+z-index:9999;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.hero h1{
+font-size:60px;
+}
+
+nav ul{
+display:none;
+}
+
+.hero{
+padding:0 5%;
+}
+
+.section{
+padding:70px 5%;
+}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo">NURDRIP</div>
+
+<ul>
+<li><a href="shop.html">SHOP</a></li>
+<li><a href="#">DROPS</a></li>
+<li><a href="#">SNEAKERS</a></li>
+<li><a href="#">CONTACT</a></li>
+</ul>
+
+<div class="cart">
+🛒
+<div id="cartCount">0</div>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+
+<h1>LIMITED <span>DROP</span></h1>
+
+<p>
+Streetwear built for outsiders, hustlers, dreamers and people who move different.
+</p>
+
+<button onclick="scrollToProducts()">SHOP NOW</button>
+
+<div class="countdown">
+<div><h3 id="days">00</h3><p>DAYS</p></div>
+<div><h3 id="hours">00</h3><p>HRS</p></div>
+<div><h3 id="mins">00</h3><p>MIN</p></div>
+<div><h3 id="secs">00</h3><p>SEC</p></div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="products">
+<h2 class="section-title">LATEST PIECES</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="images/chilish%20t-shirts%20wmin.jpg">
+<div class="card-content">
+<h3>CHILDISH TEE</h3>
+<div class="price">R399</div>
+<button onclick="addToCart('CHILDISH TEE','R399')">ADD TO CART</button>
+</div>
+</div>
+
+<div class="card">
+<img src="IMAGES/V%20ALENTE%20T%20SHIRTS.jpg">
+<div class="card-content">
+<h3>VALENTE HOODIE</h3>
+<div class="price">R799</div>
+<button onclick="addToCart('VALENTE HOODIE','R799')">ADD TO CART</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/FON%201.jpg">
+<div class="card-content">
+<h3>FREAK OF NATURE PANTS</h3>
+<div class="price">R650</div>
+<button onclick="addToCart('FREAK OF NATURE PANTS','R650')">ADD TO CART</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/d.lay%20polo%20shirt%20wb.jpg">
+<div class="card-content">
+<h3>D.LAY JACKET</h3>
+<div class="price">R999</div>
+<button onclick="addToCart('D.LAY JACKET','R999')">ADD TO CART</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<div class="checkout" onclick="checkoutWhatsApp()">
+Checkout WhatsApp
+</div>
+
+<div class="toast" id="toast">
+Added To Cart
+</div>
+
+<script>
+let cart=[];
+
+function addToCart(name,price){
+
+cart.push({name,price});
+
+document.getElementById("cartCount").innerText=cart.length;
+
+showToast(name + " added");
+}
+
+function showToast(msg){
+
+let toast=document.getElementById("toast");
+
+toast.innerText=msg;
+toast.style.display="block";
+
+setTimeout(()=>{
+toast.style.display="none";
+},2000);
+}
+
+function checkoutWhatsApp(){
+
+if(cart.length==0){
+alert("Your cart is empty");
+return;
+}
+
+let message="🔥 NURDRIP ORDER %0A%0A";
+
+cart.forEach((item,index)=>{
+message += (index+1)+". "+item.name+" - "+item.price+"%0A";
+});
+
+message += "%0AName:%0AAddress:%0ASize:%0A";
+
+window.open(
+"https://wa.me/27813943184?text="+message,
+"_blank"
+);
+
+}
+
+function scrollToProducts(){
+document.getElementById("products").scrollIntoView({
+behavior:"smooth"
+});
+}
+
+/* COUNTDOWN */
+let endDate=new Date("May 30, 2026 00:00:00").getTime();
+
+setInterval(function(){
+
+let now=new Date().getTime();
+let gap=endDate-now;
+
+let d=Math.floor(gap/(1000*60*60*24));
+let h=Math.floor((gap%(1000*60*60*24))/(1000*60*60));
+let m=Math.floor((gap%(1000*60*60))/(1000*60));
+let s=Math.floor((gap%(1000*60))/1000);
+
+document.getElementById("days").innerText=d;
+document.getElementById("hours").innerText=h;
+document.getElementById("mins").innerText=m;
+document.getElementById("secs").innerText=s;
+
+},1000);
+</script>
+
+</body>
+</html>
